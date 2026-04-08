@@ -192,10 +192,12 @@ document.addEventListener('DOMContentLoaded', () => {
     /* Mark FEED as active on initial load */
     const feedLink = document.querySelector('.nav-link[data-panel="feed"]');
     if (feedLink) feedLink.classList.add('is-active');
-    /* Sync mute button visual state with initial isMuted value */
-    btnMute.classList.toggle('is-muted', isMuted);
-    btnMute.setAttribute('aria-label', isMuted ? 'Unmute' : 'Mute');
-    btnMute.setAttribute('aria-pressed', String(isMuted));
+    /* Sync mute button visual state if button is present */
+    if (btnMute) {
+      btnMute.classList.toggle('is-muted', isMuted);
+      btnMute.setAttribute('aria-label', isMuted ? 'Unmute' : 'Mute');
+      btnMute.setAttribute('aria-pressed', String(isMuted));
+    }
   }
 
   /* ── BUILD THUMBNAIL STRIP ────────────────────────────────── */
@@ -467,7 +469,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function bindEvents() {
     /* Controls */
     btnPlayPause.addEventListener('click', togglePlayPause);
-    btnMute.addEventListener('click', toggleMute);
+    if (btnMute) btnMute.addEventListener('click', toggleMute);
 
     /* Panel close buttons */
     panelInfoClose.addEventListener('click', () => closePanel('panelInfo'));
