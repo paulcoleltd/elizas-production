@@ -567,7 +567,7 @@ address { font-style: normal; }
   filter: brightness(0.9);
 }
 
-/* Overlay labels on each card */
+/* Overlay labels on each card — always visible */
 .work-card-overlay {
   position: absolute;
   inset: 0;
@@ -575,18 +575,13 @@ address { font-style: normal; }
   flex-direction: column;
   justify-content: flex-end;
   padding: 14px 16px;
-  background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 55%);
-  opacity: 0;
-  transition: opacity 0.3s var(--ease);
+  background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, transparent 60%);
+  opacity: 1;
+  transition: background 0.3s var(--ease);
 }
 
-.work-card:hover .work-card-overlay { opacity: 1; }
-
-.work-card-num {
-  font-size: 8px;
-  letter-spacing: 0.18em;
-  color: var(--white-dim);
-  margin-bottom: 4px;
+.work-card:hover .work-card-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.90) 0%, transparent 65%);
 }
 
 .work-card-client {
@@ -595,7 +590,7 @@ address { font-style: normal; }
   letter-spacing: 0.20em;
   text-transform: uppercase;
   color: var(--white);
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 
 .work-card-title {
@@ -603,7 +598,7 @@ address { font-style: normal; }
   font-weight: 300;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--white-dim);
+  color: rgba(255,255,255,0.65);
 }
 
 /* Always-visible num badge top-left */
