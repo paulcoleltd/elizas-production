@@ -518,10 +518,23 @@ address { font-style: normal; }
 }
 
 .panel-body--work {
-  padding: 0 56px 56px;
+  padding: 72px 56px 56px;
   width: 100%;
   max-width: 1200px;
   flex: 1;
+}
+
+/* Smaller heading specifically for the WORK panel */
+.panel-body--work .panel-eyebrow {
+  margin-bottom: 10px;
+}
+
+.panel-body--work .panel-heading {
+  font-size: clamp(18px, 2.2vw, 28px);
+  letter-spacing: 0.18em;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: var(--white-dim);
 }
 
 /* Grid of project cards */
