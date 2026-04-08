@@ -844,6 +844,59 @@ address { font-style: normal; }
   line-height: 1.8;
 }
 
+/* ── CREW SECTION ── */
+.crew-phases {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 0;
+}
+
+.crew-phase {
+  padding: 40px 32px 48px;
+  border: 1px solid var(--white-ghost);
+}
+
+.crew-phase-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  color: var(--white-dim);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--white-ghost);
+}
+
+.crew-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.crew-list li {
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: var(--white-dim);
+  line-height: 1;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--white-ghost);
+  transition: color var(--t-fast), padding-left var(--t-fast);
+}
+
+.crew-list li:last-child {
+  border-bottom: none;
+}
+
+.crew-list li:hover {
+  color: var(--white);
+  padding-left: 8px;
+}
+
 /* ── CONTACT LAYOUT ── */
 .contact-grid {
   display: grid;
@@ -997,11 +1050,13 @@ address { font-style: normal; }
   .contact-grid { grid-template-columns: 1fr; gap: 48px; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .about-stat-grid { grid-template-columns: repeat(3, 1fr); }
+  .crew-phases { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
   .services-grid { grid-template-columns: 1fr; }
   .about-stat-grid { grid-template-columns: 1fr 1fr; }
+  .crew-phases { grid-template-columns: 1fr; }
   .page-hero { padding: 48px 16px 40px; }
   .page-section { padding: 52px 16px; }
   .page-footer { flex-direction: column; gap: 20px; align-items: flex-start; }
