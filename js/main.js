@@ -18,7 +18,7 @@ const PROJECTS = [
     title:  'SHOWREEL 2025',
     job:    'EP 2501',
     hero:   '',
-    thumb:  '',
+    thumb:  '/assets/images/thumbs/project-01-thumb.jpg',
     video:  '/assets/videos/project-01.mp4',
     color:  'linear-gradient(160deg, #080810 0%, #12122a 60%, #0a0a18 100%)'
   },
@@ -29,7 +29,7 @@ const PROJECTS = [
     title:  'OPEN SPACES',
     job:    'EP 2502',
     hero:   '',
-    thumb:  '',
+    thumb:  '/assets/images/thumbs/project-02-thumb.jpg',
     color:  'linear-gradient(160deg, #060e08 0%, #0d1f10 50%, #091508 100%)'
   },
   {
@@ -39,7 +39,7 @@ const PROJECTS = [
     title:  'NEW DEFENDER',
     job:    'EP 2503',
     hero:   '',
-    thumb:  '',
+    thumb:  '/assets/images/thumbs/project-03-thumb.jpg',
     color:  'linear-gradient(160deg, #120a04 0%, #221408 50%, #180e05 100%)'
   },
   {
@@ -49,7 +49,7 @@ const PROJECTS = [
     title:  'TRANQUILITY',
     job:    'EP 2504',
     hero:   '',
-    thumb:  '',
+    thumb:  '/assets/images/thumbs/project-04-thumb.jpg',
     color:  'linear-gradient(160deg, #150900 0%, #2a1200 50%, #1c0e00 100%)'
   },
   {
@@ -59,7 +59,7 @@ const PROJECTS = [
     title:  'WINTER EDIT',
     job:    'EP 2505',
     hero:   '',
-    thumb:  '',
+    thumb:  '/assets/images/thumbs/project-05-thumb.jpg',
     color:  'linear-gradient(160deg, #040e06 0%, #071a09 50%, #040c06 100%)'
   },
   {
@@ -69,7 +69,7 @@ const PROJECTS = [
     title:  'EFFERVESCENCE',
     job:    'EP 2506',
     hero:   '',
-    thumb:  '',
+    thumb:  '/assets/images/thumbs/project-06-thumb.jpg',
     color:  'linear-gradient(160deg, #141000 0%, #2a1e04 50%, #1a1200 100%)'
   },
   {
@@ -79,7 +79,7 @@ const PROJECTS = [
     title:  'NORTHERN LIGHT',
     job:    'EP 2507',
     hero:   '',
-    thumb:  '',
+    thumb:  '/assets/images/thumbs/project-07-thumb.jpg',
     color:  'linear-gradient(160deg, #04080f 0%, #08122a 50%, #060e1e 100%)'
   },
   {
@@ -89,7 +89,7 @@ const PROJECTS = [
     title:  'NORTHERN SOUL',
     job:    'EP 2508',
     hero:   '',
-    thumb:  '',
+    thumb:  '/assets/images/thumbs/project-08-thumb.jpg',
     color:  'linear-gradient(160deg, #0f0404 0%, #220808 50%, #180505 100%)'
   },
   {
@@ -99,7 +99,7 @@ const PROJECTS = [
     title:  'THE SILENT HOUR',
     job:    'EP 2509',
     hero:   '',
-    thumb:  '',
+    thumb:  '/assets/images/thumbs/project-09-thumb.jpg',
     color:  'linear-gradient(160deg, #080808 0%, #111111 40%, #0c0d0e 100%)'
   },
   {
@@ -109,7 +109,7 @@ const PROJECTS = [
     title:  'SOUNDS OF THE NORTH',
     job:    'EP 2510',
     hero:   '',
-    thumb:  '',
+    thumb:  '/assets/images/thumbs/project-10-thumb.jpg',
     color:  'linear-gradient(160deg, #040e0e 0%, #081a18 50%, #061210 100%)'
   },
   {
@@ -119,7 +119,7 @@ const PROJECTS = [
     title:  'ORIGINAL FIELD',
     job:    'EP 2511',
     hero:   '',
-    thumb:  '',
+    thumb:  '/assets/images/thumbs/project-11-thumb.jpg',
     color:  'linear-gradient(160deg, #050e06 0%, #0a1a0c 50%, #071208 100%)'
   },
   {
@@ -129,7 +129,7 @@ const PROJECTS = [
     title:  'RITUAL',
     job:    'EP 2512',
     hero:   '',
-    thumb:  '',
+    thumb:  '/assets/images/thumbs/project-12-thumb.jpg',
     color:  'linear-gradient(160deg, #100e0a 0%, #1e1a12 50%, #161208 100%)'
   },
   {
@@ -139,7 +139,7 @@ const PROJECTS = [
     title:  'BLOODBUZZ',
     job:    'EP 2513',
     hero:   '',
-    thumb:  '',
+    thumb:  '/assets/images/thumbs/project-13-thumb.jpg',
     color:  'linear-gradient(160deg, #060810 0%, #0c1020 50%, #080c18 100%)'
   },
   {
@@ -149,7 +149,7 @@ const PROJECTS = [
     title:  'A CENTURY IN HARROGATE',
     job:    'EP 2514',
     hero:   '',
-    thumb:  '',
+    thumb:  '/assets/images/thumbs/project-14-thumb.jpg',
     color:  'linear-gradient(160deg, #0e0a06 0%, #1c1408 50%, #140e05 100%)'
   }
 ];
@@ -226,23 +226,50 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ── BUILD WORK LIST (panel) ──────────────────────────────── */
+  /* ── BUILD WORK GRID (panel) ──────────────────────────────── */
   function buildWorkList() {
     PROJECTS.forEach((proj, idx) => {
-      const li = document.createElement('li');
-      li.className = 'work-item';
-      li.innerHTML =
-        '<span class="work-item-num">' + String(idx + 1).padStart(2, '0') + '</span>' +
-        '<span class="work-item-client">' + proj.client + '</span>' +
-        '<span class="work-item-title">'  + proj.title  + '</span>';
+      const num = String(idx + 1).padStart(2, '0');
 
-      li.addEventListener('click', () => {
+      const card = document.createElement('div');
+      card.className = 'work-card';
+      card.setAttribute('role', 'button');
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('aria-label', proj.client + ' — ' + proj.title);
+
+      /* Thumbnail image or gradient fallback */
+      if (proj.thumb) {
+        const img = document.createElement('img');
+        img.src = proj.thumb;
+        img.alt = proj.client + ' — ' + proj.title;
+        img.className = 'work-card-thumb';
+        img.loading = 'lazy';
+        card.appendChild(img);
+      } else {
+        const div = document.createElement('div');
+        div.className = 'work-card-thumb';
+        div.style.background = proj.color;
+        card.appendChild(div);
+      }
+
+      /* Always-visible project number badge */
+      card.insertAdjacentHTML('beforeend',
+        '<span class="work-card-badge">' + num + '</span>' +
+        '<div class="work-card-overlay">' +
+          '<p class="work-card-client">' + proj.client + '</p>' +
+          '<p class="work-card-title">'  + proj.title  + '</p>' +
+        '</div>'
+      );
+
+      const activate = () => {
         closePanel('panelWork');
         activateProject(idx, !reducedMotion);
         startAutoAdvance();
-      });
+      };
+      card.addEventListener('click', activate);
+      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') activate(); });
 
-      workList.appendChild(li);
+      workList.appendChild(card);
     });
   }
 

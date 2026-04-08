@@ -1,6 +1,5 @@
 # Large media files — add real assets manually or via Git LFS
 assets/videos/
-assets/images/thumbs/
 
 # OS / editor noise
 .DS_Store

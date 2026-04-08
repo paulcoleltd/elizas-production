@@ -512,54 +512,95 @@ address { font-style: normal; }
   border-color: var(--white);
 }
 
-/* Work panel list */
-.panel-body--work {
-  padding-left: 80px;
+/* Work panel — full-width grid layout */
+.panel--work {
+  overflow-y: auto;
 }
 
-.work-list {
-  margin-top: 10px;
+.panel-body--work {
+  padding: 0 56px 56px;
+  max-width: 1200px;
+}
+
+/* Grid of project cards */
+.work-grid {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2px;
+}
+
+.work-card {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--bg-deep);
+}
+
+.work-card-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s var(--ease), filter 0.5s var(--ease);
+  filter: brightness(0.72);
+}
+
+.work-card:hover .work-card-thumb {
+  transform: scale(1.04);
+  filter: brightness(0.9);
+}
+
+/* Overlay labels on each card */
+.work-card-overlay {
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  justify-content: flex-end;
+  padding: 14px 16px;
+  background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 55%);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
 }
 
-.work-item {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--white-ghost);
-  cursor: pointer;
-  transition: opacity var(--t-fast);
-  opacity: 0.65;
-}
+.work-card:hover .work-card-overlay { opacity: 1; }
 
-.work-item:hover { opacity: 1; }
-
-.work-item-num {
-  font-size: 9px;
-  color: var(--white-dim);
-  letter-spacing: 0.14em;
-  width: 32px;
-  flex-shrink: 0;
-}
-
-.work-item-client {
-  font-size: 10px;
-  font-weight: 500;
+.work-card-num {
+  font-size: 8px;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
-  width: 140px;
-  flex-shrink: 0;
+  color: var(--white-dim);
+  margin-bottom: 4px;
 }
 
-.work-item-title {
-  font-size: 10px;
-  font-weight: 300;
-  letter-spacing: 0.12em;
-  color: var(--white-dim);
+.work-card-client {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.20em;
   text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 2px;
+}
+
+.work-card-title {
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white-dim);
+}
+
+/* Always-visible num badge top-left */
+.work-card-badge {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.35);
+  font-weight: 400;
+  pointer-events: none;
 }
 
 /* ── RESPONSIVE ─────────────────────────────────────────────── */
