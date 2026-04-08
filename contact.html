@@ -142,6 +142,7 @@
       <nav class="footer-links" aria-label="Footer navigation">
         <a href="/about.html"    class="footer-link">About</a>
         <a href="/services.html" class="footer-link">Services</a>
+        <a href="/contact.html"  class="footer-link">Contact</a>
         <a href="https://www.instagram.com/elizawebsterproduction"
            target="_blank" rel="noopener noreferrer"
            class="footer-link footer-ig">@elizawebsterproduction ↗</a>
@@ -161,12 +162,12 @@
 
       if (!name || !email || !msg) {
         status.textContent = 'Please fill in all required fields.';
-        status.style.color = 'rgba(255,100,100,0.8)';
+        status.className = 'form-status is-error';
         return;
       }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         status.textContent = 'Please enter a valid email address.';
-        status.style.color = 'rgba(255,100,100,0.8)';
+        status.className = 'form-status is-error';
         return;
       }
 
@@ -176,7 +177,7 @@
 
       setTimeout(() => {
         status.textContent = 'Message sent. We\'ll be in touch within 24 hours.';
-        status.style.color = 'rgba(255,255,255,0.55)';
+        status.className = 'form-status is-success';
         btn.textContent = 'SENT ✓';
         this.reset();
         setTimeout(() => {
@@ -188,16 +189,6 @@
     });
   </script>
 
-  <style>
-    .form-status {
-      font-size: 11px;
-      font-weight: 300;
-      letter-spacing: 0.08em;
-      margin-top: 8px;
-      min-height: 18px;
-      line-height: 1.6;
-    }
-  </style>
 
 </body>
 </html>

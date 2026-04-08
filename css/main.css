@@ -90,6 +90,16 @@ address { font-style: normal; }
   /* Transparent — hero bleeds through, top overlay gradient handles legibility */
 }
 
+/* Nav top gradient for legibility over hero */
+#nav::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.38) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+
 /* Left nav links */
 .nav-links {
   display: flex;
@@ -371,6 +381,8 @@ address { font-style: normal; }
   display: flex;
   align-items: center;
   overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 60px, black calc(100% - 60px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 60px, black calc(100% - 60px), transparent 100%);
 }
 
 .strip-track {
@@ -415,13 +427,13 @@ address { font-style: normal; }
 }
 
 .thumb:hover {
-  opacity: 0.70;
+  opacity: 0.78;
 }
 
 .thumb--active {
   width: var(--thumb-w-active);
   opacity: 1;
-  border-color: var(--white);
+  border-color: rgba(255,255,255,0.7);
 }
 
 .thumb--active:hover {
@@ -742,7 +754,7 @@ address { font-style: normal; }
   text-transform: uppercase;
   color: var(--white);
   line-height: 1.0;
-  max-width: 700px;
+  max-width: 760px;
 }
 
 .page-subtitle {
@@ -782,7 +794,7 @@ address { font-style: normal; }
   flex: 1;
   height: 1px;
   background: var(--white-ghost);
-  max-width: 80px;
+  max-width: 120px;
 }
 
 .section-heading {
@@ -822,6 +834,11 @@ address { font-style: normal; }
 .about-stat {
   padding: 32px 24px;
   border: 1px solid var(--white-ghost);
+  transition: background var(--t-med) var(--ease);
+}
+
+.about-stat:hover {
+  background: var(--white-ghost);
 }
 
 .about-stat-num {
@@ -864,10 +881,16 @@ address { font-style: normal; }
   inset: 0;
   background: var(--white-ghost);
   opacity: 0;
-  transition: opacity var(--t-med) var(--ease);
+  transition: opacity var(--t-med) var(--ease), border-color var(--t-med) var(--ease);
+  border-top: 1px solid transparent;
 }
 
-.service-card:hover::before { opacity: 1; }
+.service-card:hover::before {
+  opacity: 1;
+  border-top-color: rgba(255,255,255,0.18);
+}
+
+.service-card:hover .service-num { color: var(--white); }
 
 .service-num {
   font-size: 9px;
@@ -875,6 +898,7 @@ address { font-style: normal; }
   letter-spacing: 0.14em;
   color: var(--white-dim);
   margin-bottom: 32px;
+  transition: color var(--t-fast);
 }
 
 .service-title {
@@ -937,6 +961,25 @@ address { font-style: normal; }
   padding: 12px 0;
   border-bottom: 1px solid var(--white-ghost);
   transition: color var(--t-fast), padding-left var(--t-fast);
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.crew-list li::before {
+  content: '→';
+  font-size: 9px;
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transition: opacity var(--t-fast), width var(--t-fast);
+  color: var(--white-dim);
+  flex-shrink: 0;
+}
+
+.crew-list li:hover::before {
+  opacity: 1;
+  width: 18px;
 }
 
 .crew-list li:last-child {
@@ -945,7 +988,6 @@ address { font-style: normal; }
 
 .crew-list li:hover {
   color: var(--white);
-  padding-left: 8px;
 }
 
 /* ── CONTACT LAYOUT ── */
@@ -981,20 +1023,24 @@ address { font-style: normal; }
   background: transparent;
   border: none;
   border-bottom: 1px solid var(--white-faint);
+  border-left: 2px solid transparent;
   color: var(--white);
   font-family: var(--font);
   font-size: 13px;
   font-weight: 300;
   letter-spacing: 0.06em;
   padding: 12px 0;
+  padding-left: 0;
   outline: none;
-  transition: border-color var(--t-fast);
+  transition: border-color var(--t-fast), padding-left var(--t-fast);
   width: 100%;
 }
 
 .form-input:focus,
 .form-textarea:focus {
   border-color: var(--white);
+  border-left-color: var(--white-dim);
+  padding-left: 8px;
 }
 
 .form-textarea {
@@ -1029,7 +1075,7 @@ address { font-style: normal; }
 .contact-info {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 32px;
 }
 
 .contact-info-block {}
@@ -1064,7 +1110,7 @@ address { font-style: normal; }
 
 /* ── PAGE FOOTER ── */
 .page-footer {
-  padding: 48px var(--ctrl-pad);
+  padding: 36px var(--ctrl-pad);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1172,6 +1218,7 @@ address { font-style: normal; }
   align-items: center;
   gap: 10px;
   transition: background var(--t-fast), color var(--t-fast), transform var(--t-fast);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 
 .sticky-cta:hover {
@@ -1412,6 +1459,26 @@ address { font-style: normal; }
   line-height: 1.8;
 }
 
+/* ── FORM STATUS ─────────────────────────────────────────────── */
+.form-status {
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  margin-top: 8px;
+  min-height: 18px;
+  line-height: 1.6;
+  color: var(--white-dim);
+}
+.form-status.is-error { color: rgba(255, 110, 110, 0.85); }
+.form-status.is-success { color: var(--white-dim); }
+
+/* ── WORK CARD DIV THUMB FALLBACK ────────────────────────────── */
+div.work-card-thumb {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 /* ── REDUCED MOTION ─────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   .hero-bg,
@@ -1420,4 +1487,6 @@ address { font-style: normal; }
   .panel,
   .ctrl-btn,
   .nav-link::after { transition: none; }
+
+  .client-ticker-inner { animation: none; }
 }
