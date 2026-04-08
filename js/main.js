@@ -373,10 +373,16 @@ document.addEventListener('DOMContentLoaded', () => {
     panel.classList.remove('is-open');
     panel.setAttribute('aria-hidden', 'true');
     /* Deactivate the matching nav link */
-    const panelKey = id.replace('panel', '').toLowerCase(); /* 'panelInfo' → 'info' */
+    const panelKey = id.replace('panel', '').toLowerCase();
     document.querySelectorAll('.nav-link').forEach(l => {
       if (l.dataset.panel === panelKey) l.classList.remove('is-active');
     });
+    /* Restore FEED as active if no other panel is open */
+    const anyOpen = document.querySelectorAll('.panel.is-open').length > 0;
+    if (!anyOpen) {
+      const feedLink = document.querySelector('.nav-link[data-panel="feed"]');
+      if (feedLink) feedLink.classList.add('is-active');
+    }
     if (isPlaying) startAutoAdvance();
   }
 
