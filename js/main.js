@@ -12,7 +12,7 @@
 
 const PROJECTS = [
   {
-    /* 01 — Hero video project */
+    /* 01 — Studio showreel */
     id:     'project-01',
     client: 'ELIZAS PRODUCTION',
     title:  'SHOWREEL 2025',
@@ -23,57 +23,57 @@ const PROJECTS = [
     color:  'linear-gradient(160deg, #080810 0%, #12122a 60%, #0a0a18 100%)'
   },
   {
-    /* 02 — Burberry: misty forest, deep sage */
+    /* 02 — Luxury fashion brand film */
     id:     'project-02',
     client: 'BURBERRY',
-    title:  'OPEN SPACES',
+    title:  'INTO THE WILD',
     job:    'EP 2502',
     hero:   '',
     thumb:  '/assets/images/thumbs/project-02-thumb.jpg',
     color:  'linear-gradient(160deg, #060e08 0%, #0d1f10 50%, #091508 100%)'
   },
   {
-    /* 03 — Land Rover: dark clay earth, terracotta shadow */
+    /* 03 — Automotive hero film */
     id:     'project-03',
     client: 'LAND ROVER',
-    title:  'NEW DEFENDER',
+    title:  'DRIVEN BY NATURE',
     job:    'EP 2503',
     hero:   '',
     thumb:  '/assets/images/thumbs/project-03-thumb.jpg',
     color:  'linear-gradient(160deg, #120a04 0%, #221408 50%, #180e05 100%)'
   },
   {
-    /* 04 — Arctic Monkeys: deep amber rust, late-night warmth */
+    /* 04 — Music video */
     id:     'project-04',
     client: 'ARCTIC MONKEYS',
-    title:  'TRANQUILITY',
+    title:  'FOUR OUT OF FIVE',
     job:    'EP 2504',
     hero:   '',
     thumb:  '/assets/images/thumbs/project-04-thumb.jpg',
     color:  'linear-gradient(160deg, #150900 0%, #2a1200 50%, #1c0e00 100%)'
   },
   {
-    /* 05 — Harrods: bottle green, black marble */
+    /* 05 — Luxury retail campaign */
     id:     'project-05',
     client: 'HARRODS',
-    title:  'WINTER EDIT',
+    title:  'THE WINTER EDIT',
     job:    'EP 2505',
     hero:   '',
     thumb:  '/assets/images/thumbs/project-05-thumb.jpg',
     color:  'linear-gradient(160deg, #040e06 0%, #071a09 50%, #040c06 100%)'
   },
   {
-    /* 06 — Moët: dark champagne gold, deep shadow */
+    /* 06 — Luxury lifestyle brand film */
     id:     'project-06',
-    client: 'MOËT & CHANDON',
-    title:  'EFFERVESCENCE',
+    client: 'ROLLS-ROYCE',
+    title:  'THE SILENT HOUR',
     job:    'EP 2506',
     hero:   '',
     thumb:  '/assets/images/thumbs/project-06-thumb.jpg',
-    color:  'linear-gradient(160deg, #141000 0%, #2a1e04 50%, #1a1200 100%)'
+    color:  'linear-gradient(160deg, #080808 0%, #111111 40%, #0c0d0e 100%)'
   },
   {
-    /* 07 — Vogue Britain: deep navy, editorial slate */
+    /* 07 — Editorial fashion film */
     id:     'project-07',
     client: 'VOGUE BRITAIN',
     title:  'NORTHERN LIGHT',
@@ -83,73 +83,13 @@ const PROJECTS = [
     color:  'linear-gradient(160deg, #04080f 0%, #08122a 50%, #060e1e 100%)'
   },
   {
-    /* 08 — Channel 4: deep crimson, broadcast drama */
+    /* 08 — Yorkshire craft brand documentary */
     id:     'project-08',
-    client: 'CHANNEL 4',
-    title:  'NORTHERN SOUL',
+    client: 'BETTYS',
+    title:  'A CENTURY OF CRAFT',
     job:    'EP 2508',
     hero:   '',
     thumb:  '/assets/images/thumbs/project-08-thumb.jpg',
-    color:  'linear-gradient(160deg, #0f0404 0%, #220808 50%, #180505 100%)'
-  },
-  {
-    /* 09 — Rolls-Royce: near-black, silver shadow */
-    id:     'project-09',
-    client: 'ROLLS-ROYCE',
-    title:  'THE SILENT HOUR',
-    job:    'EP 2509',
-    hero:   '',
-    thumb:  '/assets/images/thumbs/project-09-thumb.jpg',
-    color:  'linear-gradient(160deg, #080808 0%, #111111 40%, #0c0d0e 100%)'
-  },
-  {
-    /* 10 — Spotify: dark teal, sound wave depth */
-    id:     'project-10',
-    client: 'SPOTIFY',
-    title:  'SOUNDS OF THE NORTH',
-    job:    'EP 2510',
-    hero:   '',
-    thumb:  '/assets/images/thumbs/project-10-thumb.jpg',
-    color:  'linear-gradient(160deg, #040e0e 0%, #081a18 50%, #061210 100%)'
-  },
-  {
-    /* 11 — Hunter: original hunter green, field darkness */
-    id:     'project-11',
-    client: 'HUNTER',
-    title:  'ORIGINAL FIELD',
-    job:    'EP 2511',
-    hero:   '',
-    thumb:  '/assets/images/thumbs/project-11-thumb.jpg',
-    color:  'linear-gradient(160deg, #050e06 0%, #0a1a0c 50%, #071208 100%)'
-  },
-  {
-    /* 12 — Aesop: warm dark taupe, ritual quiet */
-    id:     'project-12',
-    client: 'AESOP',
-    title:  'RITUAL',
-    job:    'EP 2512',
-    hero:   '',
-    thumb:  '/assets/images/thumbs/project-12-thumb.jpg',
-    color:  'linear-gradient(160deg, #100e0a 0%, #1e1a12 50%, #161208 100%)'
-  },
-  {
-    /* 13 — The National: deep blue-grey, melancholic dusk */
-    id:     'project-13',
-    client: 'THE NATIONAL',
-    title:  'BLOODBUZZ',
-    job:    'EP 2513',
-    hero:   '',
-    thumb:  '/assets/images/thumbs/project-13-thumb.jpg',
-    color:  'linear-gradient(160deg, #060810 0%, #0c1020 50%, #080c18 100%)'
-  },
-  {
-    /* 14 — Bettys: warm dark brown, century of craft */
-    id:     'project-14',
-    client: 'BETTYS',
-    title:  'A CENTURY IN HARROGATE',
-    job:    'EP 2514',
-    hero:   '',
-    thumb:  '/assets/images/thumbs/project-14-thumb.jpg',
     color:  'linear-gradient(160deg, #0e0a06 0%, #1c1408 50%, #140e05 100%)'
   }
 ];

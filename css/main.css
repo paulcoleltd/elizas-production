@@ -127,15 +127,13 @@ address { font-style: normal; }
   width: 100%;
 }
 
-/* Centre identity */
+/* Right identity */
 .nav-identity {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   align-items: center;
   gap: 10px;
   white-space: nowrap;
+  margin-left: auto;
 }
 
 .nav-studio-name {
@@ -515,19 +513,23 @@ address { font-style: normal; }
 /* Work panel — full-width grid layout */
 .panel--work {
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .panel-body--work {
   padding: 0 56px 56px;
+  width: 100%;
   max-width: 1200px;
+  flex: 1;
 }
 
 /* Grid of project cards */
 .work-grid {
-  margin-top: 12px;
+  margin-top: 24px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 2px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 3px;
 }
 
 .work-card {
@@ -707,11 +709,11 @@ address { font-style: normal; }
 
 /* ── PAGE HERO ── */
 .page-hero {
-  min-height: 50vh;
+  min-height: 42vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 88px var(--ctrl-pad) 56px;
+  padding: 80px var(--ctrl-pad) 40px;
   position: relative;
   border-bottom: 1px solid var(--white-ghost);
 }
@@ -747,7 +749,7 @@ address { font-style: normal; }
 
 /* ── PAGE SECTION ── */
 .page-section {
-  padding: 72px var(--ctrl-pad);
+  padding: 52px var(--ctrl-pad);
   border-bottom: 1px solid var(--white-ghost);
 }
 
