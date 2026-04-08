@@ -666,47 +666,47 @@ address { font-style: normal; }
 
 /* ── PAGE HERO ── */
 .page-hero {
-  min-height: 62vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 100px var(--ctrl-pad) 64px;
+  padding: 88px var(--ctrl-pad) 56px;
   position: relative;
   border-bottom: 1px solid var(--white-ghost);
 }
 
 .page-eyebrow {
   font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 0.24em;
+  font-weight: 400;
+  letter-spacing: 0.22em;
   color: var(--white-dim);
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .page-title {
-  font-size: clamp(52px, 9vw, 120px);
+  font-size: clamp(36px, 5.5vw, 72px);
   font-weight: 700;
   letter-spacing: -0.01em;
   text-transform: uppercase;
   color: var(--white);
-  line-height: 0.90;
-  max-width: 900px;
+  line-height: 1.0;
+  max-width: 700px;
 }
 
 .page-subtitle {
   font-size: 13px;
   font-weight: 300;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.03em;
   color: var(--white-dim);
-  margin-top: 28px;
-  max-width: 520px;
-  line-height: 1.8;
+  margin-top: 24px;
+  max-width: 480px;
+  line-height: 1.85;
 }
 
 /* ── PAGE SECTION ── */
 .page-section {
-  padding: 80px var(--ctrl-pad);
+  padding: 72px var(--ctrl-pad);
   border-bottom: 1px solid var(--white-ghost);
 }
 
@@ -716,14 +716,14 @@ address { font-style: normal; }
 
 .section-label {
   font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 0.24em;
+  font-weight: 400;
+  letter-spacing: 0.20em;
   color: var(--white-dim);
   text-transform: uppercase;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .section-label::after {
@@ -731,33 +731,33 @@ address { font-style: normal; }
   flex: 1;
   height: 1px;
   background: var(--white-ghost);
-  max-width: 120px;
+  max-width: 80px;
 }
 
 .section-heading {
-  font-size: clamp(28px, 4vw, 52px);
+  font-size: clamp(22px, 3vw, 38px);
   font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--white);
-  line-height: 1;
-  margin-bottom: 24px;
+  line-height: 1.1;
+  margin-bottom: 20px;
 }
 
 .section-body {
   font-size: 14px;
   font-weight: 300;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   color: var(--white-dim);
-  line-height: 1.85;
-  max-width: 560px;
+  line-height: 1.9;
+  max-width: 520px;
 }
 
 /* ── ABOUT — TWO-COLUMN LAYOUT ── */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 64px;
   align-items: start;
 }
 
@@ -798,7 +798,7 @@ address { font-style: normal; }
 }
 
 .service-card {
-  padding: 44px 32px;
+  padding: 40px 28px 44px;
   border: 1px solid var(--white-ghost);
   cursor: default;
   transition: background var(--t-med) var(--ease),
@@ -827,21 +827,21 @@ address { font-style: normal; }
 }
 
 .service-title {
-  font-size: clamp(18px, 2.5vw, 28px);
+  font-size: clamp(15px, 1.8vw, 20px);
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--white);
-  line-height: 1.1;
-  margin-bottom: 20px;
+  line-height: 1.2;
+  margin-bottom: 16px;
 }
 
 .service-desc {
   font-size: 13px;
   font-weight: 300;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   color: var(--white-dim);
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
 /* ── CREW SECTION ── */
@@ -1065,6 +1065,39 @@ address { font-style: normal; }
   .page-section   { padding: 52px 16px; }
   .page-footer    { flex-direction: column; gap: 20px; align-items: flex-start; }
   .sticky-cta     { bottom: 20px; right: 16px; padding: 12px 18px; }
+}
+
+/* ── CINEMATIC IMAGE SECTION ─────────────────────────────────── */
+.page-image-full {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--white-ghost);
+}
+
+.page-image-full img {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+  filter: brightness(0.75) contrast(1.05);
+  transition: transform 0.8s var(--ease);
+}
+
+.page-image-full:hover img {
+  transform: scale(1.02);
+}
+
+.page-image-caption {
+  position: absolute;
+  bottom: 24px;
+  right: var(--ctrl-pad);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
 }
 
 /* ── STICKY CTA ─────────────────────────────────────────────── */
