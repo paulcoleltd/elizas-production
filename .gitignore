@@ -1,0 +1,9 @@
+# Large media files — add real assets manually or via Git LFS
+assets/videos/
+assets/images/hero/
+assets/images/thumbs/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.bat

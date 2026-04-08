@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Elizas Production — Founded by Eliza Webster. Film, Music Video, Commercials &amp; Creative Direction. Based in Harrogate, UK."/>
+  <meta name="theme-color" content="#111111"/>
+  <title>Elizas Production</title>
+  <link rel="icon" href="/assets/logo/elizas-production-mark.svg" type="image/svg+xml"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+</head>
+<body>
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav id="nav" role="navigation" aria-label="Primary navigation">
+
+    <!-- Left: nav links -->
+    <ul class="nav-links" role="list">
+      <li><a href="/" class="nav-link" data-panel="feed">FEED</a></li>
+      <li><a href="#" class="nav-link" data-panel="work">WORK</a></li>
+      <li><a href="/about.html" class="nav-link" data-panel="about">ABOUT</a></li>
+      <li><a href="/services.html" class="nav-link" data-panel="services">SERVICES</a></li>
+      <li><a href="/contact.html" class="nav-link" data-panel="contact">CONTACT</a></li>
+    </ul>
+
+    <!-- Centre: full logo lockup -->
+    <div class="nav-identity" aria-label="Elizas Production">
+      <img src="/assets/logo/elizas-production.svg"
+           alt="Elizas Production"
+           class="nav-logo"
+           width="220"
+           height="40"/>
+    </div>
+
+    <!-- Right: mark only (small) -->
+    <div class="nav-logo-mark" aria-label="Elizas Production mark">
+      <img src="/assets/logo/elizas-production-mark.svg"
+           alt=""
+           aria-hidden="true"
+           class="nav-mark-img"
+           width="22"
+           height="28"/>
+    </div>
+
+  </nav>
+
+  <!-- ═══ HERO AREA ═══ -->
+  <main id="hero" role="main" aria-live="polite" aria-label="Active project showcase">
+
+    <!-- Background layer — swapped by JS on project change -->
+    <div id="heroBg" class="hero-bg">
+      <!-- Video element: shown when active project has a video src -->
+      <video id="heroVideo"
+             class="hero-video"
+             autoplay
+             muted
+             loop
+             playsinline
+             preload="auto"
+             aria-hidden="true">
+      </video>
+    </div>
+
+    <!-- Gradient overlay for text legibility -->
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <!-- Three project labels overlaid on hero -->
+    <div class="hero-labels" aria-hidden="true">
+      <span id="labelClient"  class="hero-label label-client"></span>
+      <span id="labelProject" class="hero-label label-project"></span>
+      <span id="labelJob"     class="hero-label label-job"></span>
+    </div>
+
+  </main>
+
+  <!-- ═══ PLAYBACK CONTROLS ═══ -->
+  <div id="controls" class="controls" role="toolbar" aria-label="Playback controls">
+
+    <!-- Bottom-left: play / pause -->
+    <button id="btnPlayPause" class="ctrl-btn ctrl-play" aria-label="Pause slideshow" aria-pressed="false">
+      <svg class="icon-pause" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+        <rect x="6" y="4" width="4" height="16"/>
+        <rect x="14" y="4" width="4" height="16"/>
+      </svg>
+      <svg class="icon-play" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+        <polygon points="5,3 19,12 5,21"/>
+      </svg>
+    </button>
+
+    <!-- Bottom-right: mute / unmute -->
+    <button id="btnMute" class="ctrl-btn ctrl-mute" aria-label="Mute" aria-pressed="true">
+      <svg class="icon-sound-on" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/>
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+      </svg>
+      <svg class="icon-sound-off" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/>
+        <line x1="23" y1="9" x2="17" y2="15"/>
+        <line x1="17" y1="9" x2="23" y2="15"/>
+      </svg>
+    </button>
+
+  </div>
+
+  <!-- ═══ THUMBNAIL STRIP ═══ -->
+  <footer id="strip" role="navigation" aria-label="Project thumbnails">
+    <div id="stripTrack" class="strip-track">
+      <!-- Populated dynamically by main.js -->
+    </div>
+  </footer>
+
+  <!-- ═══ INFO PANEL OVERLAY ═══ -->
+  <aside id="panelInfo" class="panel panel--info" aria-hidden="true" role="complementary" aria-label="Studio information">
+    <button class="panel-close" id="panelInfoClose" aria-label="Close info panel">&#x2715;</button>
+    <div class="panel-body">
+      <p class="panel-eyebrow">EST. 2018</p>
+      <h1 class="panel-heading">Elizas<br/>Production</h1>
+      <p class="panel-text">
+        An independent creative production studio specialising in film,
+        music video, commercials, creative direction, and photography.
+        We work with brands, artists, fans, and collaborators to create
+        work that lasts.
+      </p>
+      <address class="panel-address">
+        <a href="mailto:info@elizawebster.com">info@elizawebster.com</a>
+      </address>
+      <a href="https://www.instagram.com/elizawebsterproduction"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="instagram-link"
+         style="margin-top:20px; display:inline-flex;"
+         aria-label="Follow on Instagram">
+        <span class="ig-handle">@elizawebsterproduction</span>
+        <span class="ig-arrow">↗</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- ═══ WORK PANEL OVERLAY ═══ -->
+  <aside id="panelWork" class="panel panel--work" aria-hidden="true" role="complementary" aria-label="All projects">
+    <button class="panel-close" id="panelWorkClose" aria-label="Close work panel">&#x2715;</button>
+    <div class="panel-body panel-body--work">
+      <p class="panel-eyebrow">SELECTED WORK</p>
+      <h2 class="panel-heading">Projects</h2>
+      <ul class="work-list" id="workList" role="list">
+        <!-- Populated by JS -->
+      </ul>
+    </div>
+  </aside>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

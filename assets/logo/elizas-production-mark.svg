@@ -1,0 +1,30 @@
+<svg viewBox="0 0 32 40" xmlns="http://www.w3.org/2000/svg" fill="none" role="img" aria-label="Elizas Production mark">
+
+  <!-- Dark background for mark-only version -->
+  <rect x="0" y="0" width="32" height="40" fill="#111111"/>
+
+  <!-- Left spine -->
+  <rect x="4"  y="4"  width="4"  height="32" fill="white"/>
+
+  <!-- Film bar 1 (top) -->
+  <rect x="8"  y="4"  width="16" height="6"  fill="white"/>
+
+  <!-- Film bar 2 -->
+  <rect x="8"  y="14" width="11" height="5"  fill="white"/>
+
+  <!-- Film bar 3 -->
+  <rect x="8"  y="22" width="13" height="5"  fill="white"/>
+
+  <!-- Film bar 4 (bottom) -->
+  <rect x="8"  y="30" width="16" height="6"  fill="white"/>
+
+  <!-- Diagonal cut — top-right corner -->
+  <polygon points="19,4 24,4 24,10" fill="#111111"/>
+
+  <!-- White diagonal slash line -->
+  <line x1="21" y1="12" x2="26" y2="28"
+        stroke="white"
+        stroke-width="1.6"
+        stroke-linecap="square"/>
+
+</svg>
