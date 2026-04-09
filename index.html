@@ -41,6 +41,18 @@
   <!-- ═══ HERO AREA ═══ -->
   <main id="hero" role="main" aria-live="polite" aria-label="Active project showcase">
 
+    <!-- Waterfall base — always playing underneath everything -->
+    <video id="baseVideo"
+           class="base-video"
+           autoplay
+           muted
+           loop
+           playsinline
+           preload="auto"
+           aria-hidden="true">
+      <source src="/assets/videos/base-bg.mp4" type="video/mp4"/>
+    </video>
+
     <!-- Background layer — swapped by JS on project change -->
     <div id="heroBg" class="hero-bg">
       <!-- Video element: shown when active project has a video src -->

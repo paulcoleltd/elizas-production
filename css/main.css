@@ -223,12 +223,29 @@ address { font-style: normal; }
   background: var(--bg);
 }
 
+/* Waterfall ambient base — always playing, lowest layer */
+.base-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  opacity: 1;
+  filter: brightness(0.55) saturate(0.7);
+}
+
 .hero-bg {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  z-index: 1;
+  /* Semi-transparent so waterfall bleeds through on gradient projects */
+  opacity: 0.72;
+  mix-blend-mode: multiply;
   transition:
     opacity var(--t-hero) var(--ease),
     transform var(--t-hero) var(--ease);
@@ -240,7 +257,7 @@ address { font-style: normal; }
   transform: scale(1.025);
 }
 
-/* Video fills hero exactly like a background-image */
+/* Project video — sits above base, full opacity */
 .hero-video {
   position: absolute;
   inset: 0;
@@ -248,8 +265,9 @@ address { font-style: normal; }
   height: 100%;
   object-fit: cover;
   object-position: center;
-  display: none;          /* hidden until a video project is active */
-  opacity: 1;
+  z-index: 2;
+  display: none;
+  opacity: 0.88;
 }
 
 .hero-video.is-active {
@@ -260,14 +278,15 @@ address { font-style: normal; }
 .hero-overlay {
   position: absolute;
   inset: 0;
+  z-index: 3;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.50) 0%,
-    rgba(0, 0, 0, 0.10) 20%,
+    rgba(0, 0, 0, 0.52) 0%,
+    rgba(0, 0, 0, 0.08) 22%,
     rgba(0, 0, 0, 0.00) 45%,
     rgba(0, 0, 0, 0.00) 55%,
-    rgba(0, 0, 0, 0.55) 80%,
-    rgba(0, 0, 0, 0.80) 100%
+    rgba(0, 0, 0, 0.52) 80%,
+    rgba(0, 0, 0, 0.82) 100%
   );
   pointer-events: none;
 }
@@ -277,6 +296,7 @@ address { font-style: normal; }
   position: absolute;
   bottom: calc(var(--strip-h) + 18px);
   left: 0; right: 0;
+  z-index: 4;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: end;
