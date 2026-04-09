@@ -53,29 +53,32 @@
       <source src="/assets/videos/base-bg.mp4" type="video/mp4"/>
     </video>
 
-    <!-- Background layer — swapped by JS on project change -->
-    <div id="heroBg" class="hero-bg">
-      <!-- Video element: shown when active project has a video src -->
-      <video id="heroVideo"
-             class="hero-video"
-             autoplay
-             muted
-             loop
-             playsinline
-             preload="auto"
-             aria-hidden="true">
-      </video>
-    </div>
+    <!-- Background colour/gradient layer -->
+    <div id="heroBg" class="hero-bg"></div>
+
+    <!-- Project video — sibling of heroBg, no blend mode -->
+    <video id="heroVideo"
+           class="hero-video"
+           autoplay
+           muted
+           loop
+           playsinline
+           preload="auto"
+           aria-hidden="true">
+    </video>
 
     <!-- Gradient overlay for text legibility -->
     <div class="hero-overlay" aria-hidden="true"></div>
 
-    <!-- Three project labels overlaid on hero -->
+    <!-- Project labels -->
     <div class="hero-labels" aria-hidden="true">
       <span id="labelClient"  class="hero-label label-client"></span>
       <span id="labelProject" class="hero-label label-project"></span>
       <span id="labelJob"     class="hero-label label-job"></span>
     </div>
+
+    <!-- Project story line -->
+    <div id="labelStory" class="hero-story" aria-hidden="true"></div>
 
   </main>
 
@@ -132,6 +135,8 @@
 
   <!-- ═══ WORK PANEL OVERLAY ═══ -->
   <aside id="panelWork" class="panel panel--work" aria-hidden="true" role="complementary" aria-label="All projects">
+    <!-- Orbiting project type words -->
+    <div id="orbitWords" class="orbit-container" aria-hidden="true"></div>
     <button class="panel-close" id="panelWorkClose" aria-label="Close work panel">&#x2715;</button>
     <div class="panel-body panel-body--work">
       <p class="panel-eyebrow">SELECTED WORK</p>

@@ -12,92 +12,108 @@
 
 const PROJECTS = [
   {
-    /* 01 — Studio showreel */
     id:     'project-01',
     client: 'ELIZAS PRODUCTION',
     title:  'SHOWREEL 2025',
     job:    'EP 2501',
+    type:   'SHOWREEL',
+    story:  'A year of craft — every frame a decision, every cut a choice made with intent.',
     hero:   '',
     thumb:  '/assets/images/thumbs/project-01-thumb.jpg',
     video:  '/assets/videos/project-01.mp4',
-    color:  'linear-gradient(160deg, #080810 0%, #12122a 60%, #0a0a18 100%)'
+    color:  'linear-gradient(160deg, #080810 0%, #12122a 60%, #0a0a18 100%)',
+    tone:   [261.63, 329.63, 392.00]
   },
   {
-    /* 02 — Luxury fashion brand film */
     id:     'project-02',
     client: 'BURBERRY',
     title:  'INTO THE WILD',
     job:    'EP 2502',
+    type:   'BRAND FILM',
+    story:  'Shot across the Scottish Highlands — heritage clothing meeting untouched terrain.',
     hero:   '',
     thumb:  '/assets/images/thumbs/project-02-thumb.jpg',
     video:  '/assets/videos/project-02.mp4',
-    color:  'linear-gradient(160deg, #060e08 0%, #0d1f10 50%, #091508 100%)'
+    color:  'linear-gradient(160deg, #060e08 0%, #0d1f10 50%, #091508 100%)',
+    tone:   [329.63, 392.00, 493.88]
   },
   {
-    /* 03 — Automotive hero film */
     id:     'project-03',
     client: 'LAND ROVER',
     title:  'DRIVEN BY NATURE',
     job:    'EP 2503',
+    type:   'COMMERCIAL',
+    story:  'Five locations. One vehicle. A film about going further than the road allows.',
     hero:   '',
     thumb:  '/assets/images/thumbs/project-03-thumb.jpg',
     video:  '/assets/videos/project-03.mp4',
-    color:  'linear-gradient(160deg, #120a04 0%, #221408 50%, #180e05 100%)'
+    color:  'linear-gradient(160deg, #120a04 0%, #221408 50%, #180e05 100%)',
+    tone:   [392.00, 493.88, 587.33]
   },
   {
-    /* 04 — Music video */
     id:     'project-04',
     client: 'ARCTIC MONKEYS',
     title:  'FOUR OUT OF FIVE',
     job:    'EP 2504',
+    type:   'MUSIC VIDEO',
+    story:  'A late-night city built on sound — cinematic noir for Sheffield's finest.',
     hero:   '',
     thumb:  '/assets/images/thumbs/project-04-thumb.jpg',
     video:  '/assets/videos/project-04.mp4',
-    color:  'linear-gradient(160deg, #150900 0%, #2a1200 50%, #1c0e00 100%)'
+    color:  'linear-gradient(160deg, #150900 0%, #2a1200 50%, #1c0e00 100%)',
+    tone:   [293.66, 349.23, 440.00]
   },
   {
-    /* 05 — Luxury retail campaign */
     id:     'project-05',
     client: 'HARRODS',
     title:  'THE WINTER EDIT',
     job:    'EP 2505',
+    type:   'LUXURY CAMPAIGN',
+    story:  'Light, texture, and silence — a seasonal campaign shot entirely at golden hour.',
     hero:   '',
     thumb:  '/assets/images/thumbs/project-05-thumb.jpg',
     video:  '/assets/videos/project-05.mp4',
-    color:  'linear-gradient(160deg, #040e06 0%, #071a09 50%, #040c06 100%)'
+    color:  'linear-gradient(160deg, #040e06 0%, #071a09 50%, #040c06 100%)',
+    tone:   [440.00, 554.37, 659.25]
   },
   {
-    /* 06 — Luxury lifestyle brand film */
     id:     'project-06',
     client: 'ROLLS-ROYCE',
     title:  'THE SILENT HOUR',
     job:    'EP 2506',
+    type:   'LUXURY FILM',
+    story:  'Engineered stillness. A film that moves as quietly as the machine it celebrates.',
     hero:   '',
     thumb:  '/assets/images/thumbs/project-06-thumb.jpg',
     video:  '/assets/videos/project-06.mp4',
-    color:  'linear-gradient(160deg, #080808 0%, #111111 40%, #0c0d0e 100%)'
+    color:  'linear-gradient(160deg, #080808 0%, #111111 40%, #0c0d0e 100%)',
+    tone:   [185.00, 233.08, 277.18]
   },
   {
-    /* 07 — Editorial fashion film */
     id:     'project-07',
     client: 'VOGUE BRITAIN',
     title:  'NORTHERN LIGHT',
     job:    'EP 2507',
+    type:   'EDITORIAL FILM',
+    story:  'Fashion beyond the capital — a portrait of northern identity shot on 35mm.',
     hero:   '',
     thumb:  '/assets/images/thumbs/project-07-thumb.jpg',
     video:  '/assets/videos/project-07.mp4',
-    color:  'linear-gradient(160deg, #04080f 0%, #08122a 50%, #060e1e 100%)'
+    color:  'linear-gradient(160deg, #04080f 0%, #08122a 50%, #060e1e 100%)',
+    tone:   [246.94, 311.13, 369.99]
   },
   {
-    /* 08 — Yorkshire craft brand documentary */
     id:     'project-08',
     client: 'BETTYS',
     title:  'A CENTURY OF CRAFT',
     job:    'EP 2508',
+    type:   'DOCUMENTARY',
+    story:  'One hundred years of Yorkshire. A story told through hands, flour, and time.',
     hero:   '',
     thumb:  '/assets/images/thumbs/project-08-thumb.jpg',
     video:  '/assets/videos/project-08.mp4',
-    color:  'linear-gradient(160deg, #0e0a06 0%, #1c1408 50%, #140e05 100%)'
+    color:  'linear-gradient(160deg, #0e0a06 0%, #1c1408 50%, #140e05 100%)',
+    tone:   [293.66, 369.99, 440.00]
   }
 ];
 
@@ -120,6 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const labelClient    = document.getElementById('labelClient');
   const labelProject   = document.getElementById('labelProject');
   const labelJob       = document.getElementById('labelJob');
+  const labelStory     = document.getElementById('labelStory');
+  const orbitWords     = document.getElementById('orbitWords');
   const stripTrack     = document.getElementById('stripTrack');
   const btnPlayPause   = document.getElementById('btnPlayPause');
   const btnMute        = document.getElementById('btnMute');
@@ -254,6 +272,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
+    /* Play cinematic tone on every project change */
+    playProjectTone(proj);
+
     if (animate) {
       hideLabels();
       heroBg.classList.add('is-transitioning');
@@ -281,24 +302,109 @@ document.addEventListener('DOMContentLoaded', () => {
     labelClient.textContent  = proj.client;
     labelProject.textContent = proj.title;
     labelJob.textContent     = proj.job;
+    if (labelStory) labelStory.textContent = proj.story || '';
   }
 
   function hideLabels() {
-    [labelClient, labelProject, labelJob].forEach(el => {
-      el.classList.remove('is-visible');
-    });
+    [labelClient, labelProject, labelJob].forEach(el => el.classList.remove('is-visible'));
+    if (labelStory) labelStory.classList.remove('is-visible');
   }
 
   function showLabels() {
     if (reducedMotion) {
       [labelClient, labelProject, labelJob].forEach(el => el.classList.add('is-visible'));
+      if (labelStory) labelStory.classList.add('is-visible');
       return;
     }
-    /* Stagger: client → title → job */
     const delays = [0, 70, 140];
     [labelClient, labelProject, labelJob].forEach((el, i) => {
       setTimeout(() => el.classList.add('is-visible'), delays[i]);
     });
+    /* Story fades in last */
+    if (labelStory) setTimeout(() => labelStory.classList.add('is-visible'), 280);
+  }
+
+  /* ── CINEMATIC TONE ENGINE ────────────────────────────────── */
+  let audioCtx = null;
+
+  function playProjectTone(proj) {
+    if (reducedMotion || !proj.tone) return;
+    try {
+      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const now = audioCtx.currentTime;
+      proj.tone.forEach((freq, i) => {
+        const osc  = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        /* Detune slightly for a lush pad feel */
+        const osc2  = audioCtx.createOscillator();
+        const gain2 = audioCtx.createGain();
+        osc.type  = 'sine';
+        osc2.type = 'sine';
+        osc.frequency.value  = freq;
+        osc2.frequency.value = freq * 1.003; /* subtle detune */
+        const vol = (i === 0) ? 0.10 : (i === 1) ? 0.07 : 0.05;
+        const delay = i * 0.08;
+        gain.gain.setValueAtTime(0, now + delay);
+        gain.gain.linearRampToValueAtTime(vol, now + delay + 0.18);
+        gain.gain.linearRampToValueAtTime(0, now + delay + 1.4);
+        gain2.gain.setValueAtTime(0, now + delay);
+        gain2.gain.linearRampToValueAtTime(vol * 0.6, now + delay + 0.22);
+        gain2.gain.linearRampToValueAtTime(0, now + delay + 1.6);
+        osc.connect(gain);   gain.connect(audioCtx.destination);
+        osc2.connect(gain2); gain2.connect(audioCtx.destination);
+        osc.start(now + delay);   osc.stop(now + delay + 1.8);
+        osc2.start(now + delay);  osc2.stop(now + delay + 2.0);
+      });
+    } catch (e) { /* AudioContext not available — silent fail */ }
+  }
+
+  /* ── ORBIT ANIMATION ──────────────────────────────────────── */
+  const ORBIT_WORDS = [
+    'MUSIC VIDEO', 'BRAND FILM', 'DOCUMENTARY', 'LUXURY FILM',
+    'EDITORIAL', 'COMMERCIAL', 'SHOWREEL', 'CREATIVE DIRECTION',
+    'COLOUR GRADE', 'POST PRODUCTION', 'VISUAL IDENTITY', '35MM'
+  ];
+  let orbitRAF = null;
+  let orbitAngles = [];
+  let orbitNodes  = [];
+
+  function startOrbit() {
+    if (!orbitWords || reducedMotion) return;
+    orbitWords.innerHTML = '';
+    orbitNodes  = [];
+    orbitAngles = [];
+    const cx = orbitWords.offsetWidth  / 2;
+    const cy = orbitWords.offsetHeight / 2;
+    ORBIT_WORDS.forEach((word, i) => {
+      const span = document.createElement('span');
+      span.className   = 'orbit-word';
+      span.textContent = word;
+      orbitWords.appendChild(span);
+      orbitNodes.push(span);
+      orbitAngles.push((i / ORBIT_WORDS.length) * Math.PI * 2);
+    });
+    const radii  = [180, 260, 310, 220, 360, 200, 290, 340, 170, 250, 380, 230];
+    const speeds = [0.00018, 0.00012, 0.00015, 0.00020, 0.00010, 0.00022,
+                    0.00014, 0.00011, 0.00019, 0.00013, 0.00009, 0.00016];
+
+    function tick(ts) {
+      const w = orbitWords.offsetWidth  / 2;
+      const h = orbitWords.offsetHeight / 2;
+      orbitNodes.forEach((node, i) => {
+        orbitAngles[i] += speeds[i % speeds.length];
+        const x = w + Math.cos(orbitAngles[i]) * radii[i % radii.length];
+        const y = h + Math.sin(orbitAngles[i]) * radii[i % radii.length] * 0.45;
+        node.style.transform = 'translate(' + (x - node.offsetWidth / 2) + 'px, ' + (y - node.offsetHeight / 2) + 'px)';
+      });
+      orbitRAF = requestAnimationFrame(tick);
+    }
+    orbitRAF = requestAnimationFrame(tick);
+  }
+
+  function stopOrbit() {
+    if (orbitRAF) { cancelAnimationFrame(orbitRAF); orbitRAF = null; }
+    if (orbitWords) orbitWords.innerHTML = '';
   }
 
   /* ── THUMBNAIL STATE ──────────────────────────────────────── */
@@ -365,13 +471,14 @@ document.addEventListener('DOMContentLoaded', () => {
   function openPanel(id) {
     const panel = document.getElementById(id);
     if (!panel) return;
-    /* Close any open panels first */
     document.querySelectorAll('.panel.is-open').forEach(p => {
       if (p.id !== id) closePanel(p.id);
     });
     panel.classList.add('is-open');
     panel.setAttribute('aria-hidden', 'false');
     stopAutoAdvance();
+    /* Start orbit when WORK panel opens */
+    if (id === 'panelWork') startOrbit();
   }
 
   function closePanel(id) {
@@ -379,12 +486,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!panel) return;
     panel.classList.remove('is-open');
     panel.setAttribute('aria-hidden', 'true');
-    /* Deactivate the matching nav link */
+    /* Stop orbit when WORK panel closes */
+    if (id === 'panelWork') stopOrbit();
     const panelKey = id.replace('panel', '').toLowerCase();
     document.querySelectorAll('.nav-link').forEach(l => {
       if (l.dataset.panel === panelKey) l.classList.remove('is-active');
     });
-    /* Restore FEED as active if no other panel is open */
     const anyOpen = document.querySelectorAll('.panel.is-open').length > 0;
     if (!anyOpen) {
       const feedLink = document.querySelector('.nav-link[data-panel="feed"]');

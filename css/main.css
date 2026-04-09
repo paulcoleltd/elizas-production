@@ -257,7 +257,7 @@ address { font-style: normal; }
   transform: scale(1.025);
 }
 
-/* Project video — sits above base, full opacity */
+/* Project video — sibling of hero-bg, clean layer, no blend */
 .hero-video {
   position: absolute;
   inset: 0;
@@ -267,11 +267,13 @@ address { font-style: normal; }
   object-position: center;
   z-index: 2;
   display: none;
-  opacity: 0.88;
+  opacity: 0;
+  transition: opacity 0.6s var(--ease);
 }
 
 .hero-video.is-active {
   display: block;
+  opacity: 1;
 }
 
 /* Gradient overlay: darkens top (nav) and bottom (labels + strip) */
@@ -337,6 +339,57 @@ address { font-style: normal; }
   text-align: right;
   color: var(--white-dim);
   font-weight: 300;
+}
+
+/* Project story line — centred just above labels */
+.hero-story {
+  position: absolute;
+  bottom: calc(var(--strip-h) + 52px);
+  left: 0; right: 0;
+  z-index: 4;
+  text-align: center;
+  padding: 0 var(--ctrl-pad);
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.5s var(--ease) 0.2s, transform 0.5s var(--ease) 0.2s;
+  max-width: 600px;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hero-story.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── ORBIT WORDS ────────────────────────────────────────────── */
+.orbit-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.orbit-word {
+  position: absolute;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.06);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform;
 }
 
 /* ── PLAYBACK CONTROLS ──────────────────────────────────────── */
