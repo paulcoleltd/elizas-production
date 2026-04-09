@@ -41,6 +41,7 @@ const PROJECTS = [
     job:    'EP 2503',
     hero:   '',
     thumb:  '/assets/images/thumbs/project-03-thumb.jpg',
+    video:  '/assets/videos/project-03.mp4',
     color:  'linear-gradient(160deg, #120a04 0%, #221408 50%, #180e05 100%)'
   },
   {
@@ -61,6 +62,7 @@ const PROJECTS = [
     job:    'EP 2505',
     hero:   '',
     thumb:  '/assets/images/thumbs/project-05-thumb.jpg',
+    video:  '/assets/videos/project-05.mp4',
     color:  'linear-gradient(160deg, #040e06 0%, #071a09 50%, #040c06 100%)'
   },
   {
@@ -71,6 +73,7 @@ const PROJECTS = [
     job:    'EP 2506',
     hero:   '',
     thumb:  '/assets/images/thumbs/project-06-thumb.jpg',
+    video:  '/assets/videos/project-06.mp4',
     color:  'linear-gradient(160deg, #080808 0%, #111111 40%, #0c0d0e 100%)'
   },
   {
