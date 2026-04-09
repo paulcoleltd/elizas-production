@@ -30,6 +30,7 @@ const PROJECTS = [
     job:    'EP 2502',
     hero:   '',
     thumb:  '/assets/images/thumbs/project-02-thumb.jpg',
+    video:  '/assets/videos/project-02.mp4',
     color:  'linear-gradient(160deg, #060e08 0%, #0d1f10 50%, #091508 100%)'
   },
   {
